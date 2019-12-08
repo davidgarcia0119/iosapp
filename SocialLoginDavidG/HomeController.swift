@@ -22,14 +22,16 @@ class HomeController: UIViewController {
         return label
     }()
     
-    // MARK: - Init
+
+    // MARCA: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticateUserAndConfigureView()
     }
     
-    // MARK: - Selectors
+   
+    // MARCA: - Selectores
     
     @objc func handleSignOut() {
         let alertController = UIAlertController(title: nil, message: "¿Estás seguro de que quieres cerrar sesión??", preferredStyle: .actionSheet)
@@ -40,7 +42,8 @@ class HomeController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    // MARK: - API
+
+    // MARCA: - API
     
   
     
@@ -83,7 +86,8 @@ class HomeController: UIViewController {
         }
     }
     
-    // MARK: - Helper Functions
+
+    // MARCA: - Funciones de ayuda
     
     func configureViewComponents() {
         view.backgroundColor = UIColor.mainBlue()

@@ -12,25 +12,25 @@ import GoogleSignIn
 
 class LoginController: UIViewController, GIDSignInUIDelegate {
     
-    // MARK: - Properties
+    // MARCA: - Propiedades
     
     let logoImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
-        iv.image =  imageLiteral(resourceName: "firebase-logo")
-        return iv
-    }()
-    
-    lazy var emailContainerView: UIView = {
-        let view = UIView()
-        return view.textContainerView(view: view,  imageLiteral(resourceName: "ic_mail_outline_white_2x-1"), emailTextField)
-    }()
-    
-    lazy var passwordContainerView: UIView = {
-        let view = UIView()
-        return view.textContainerView(view: view,  imageLiteral(resourceName: "ic_lock_outline_white_2x"), passwordTextField)
-    }()
+         let iv = UIImageView()
+         iv.contentMode = .scaleAspectFit
+         iv.clipsToBounds = true
+         iv.image = #imageLiteral(resourceName: "firebase-logo")
+         return iv
+     }()
+     
+     lazy var emailContainerView: UIView = {
+         let view = UIView()
+         return view.textContainerView(view: view, #imageLiteral(resourceName: "ic_mail_outline_white_2x-1"), emailTextField)
+     }()
+     
+     lazy var passwordContainerView: UIView = {
+         let view = UIView()
+         return view.textContainerView(view: view, #imageLiteral(resourceName: "ic_lock_outline_white_2x"), passwordTextField)
+     }()
     
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
@@ -100,7 +100,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
         return button
     }()
     
-    // MARK: - Init
+    // MARCA: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +114,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance()?.delegate = self
     }
     
-    // MARK: - Selectors
+    // MARCA: - Selectores
     
     @objc func handleGoogleSignIn() {
         GIDSignIn.sharedInstance()?.signIn()
@@ -131,7 +131,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
         navigationController?.pushViewController(SignUpController(), animated: true)
     }
     
-    // MARK: - API
+    // MARCA: - API
     
     func logUserIn(withEmail email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -145,14 +145,14 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
             guard let controller = navController.viewControllers[0] as? HomeController else { return }
             controller.configureViewComponents()
             
-            // forgot to add this in video
+          
             controller.loadUserData()
             
             self.dismiss(animated: true, completion: nil)
         }
     }
     
-    // MARK: - Helper Functions
+    // MARCA: - funciones de ayuda
     
     func configureViewComponents() {
         view.backgroundColor = UIColor.mainBlue()

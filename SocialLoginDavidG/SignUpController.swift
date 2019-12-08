@@ -12,30 +12,31 @@ import GoogleSignIn
 
 class SignUpController: UIViewController, GIDSignInUIDelegate {
     
-    // MARK: - Properties
+    // MARCA: - Propiedades
     
     let logoImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
-        iv.image =  imageLiteral(resourceName: "firebase-logo")
-        return iv
-    }()
-    
-    lazy var emailContainerView: UIView = {
-        let view = UIView()
-        return view.textContainerView(view: view,  imageLiteral(resourceName: "ic_mail_outline_white_2x-1"), emailTextField)
-    }()
-    
-    lazy var usernameContainerView: UIView = {
-        let view = UIView()
-        return view.textContainerView(view: view,  imageLiteral(resourceName: "ic_person_outline_white_2x"), usernameTextField)
-    }()
-    
-    lazy var passwordContainerView: UIView = {
-        let view = UIView()
-        return view.textContainerView(view: view,  imageLiteral(resourceName: "ic_lock_outline_white_2x"), passwordTextField)
-    }()
+          let iv = UIImageView()
+          iv.contentMode = .scaleAspectFit
+          iv.clipsToBounds = true
+          iv.image = #imageLiteral(resourceName: "firebase-logo")
+          return iv
+      }()
+      
+      lazy var emailContainerView: UIView = {
+          let view = UIView()
+          return view.textContainerView(view: view, #imageLiteral(resourceName: "ic_mail_outline_white_2x-1"), emailTextField)
+          
+      }()
+      
+      lazy var usernameContainerView: UIView = {
+          let view = UIView()
+          return view.textContainerView(view: view, #imageLiteral(resourceName: "ic_person_outline_white_2x"), usernameTextField)
+      }()
+      
+      lazy var passwordContainerView: UIView = {
+          let view = UIView()
+          return view.textContainerView(view: view, #imageLiteral(resourceName: "ic_lock_outline_white_2x"), passwordTextField)
+      }()
     
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
@@ -111,7 +112,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
         return button
     }()
     
-    // MARK: - Init
+    // MARCA: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +121,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance()?.uiDelegate = self
     }
     
-    // MARK: - Selectors
+    // MARCA: - Selectores
     
     @objc func handleGoogleSignIn() {
         GIDSignIn.sharedInstance()?.signIn()
@@ -138,7 +139,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    // MARK: - API
+    // MARCA: - API
     
     func createUser(withEmail email: String, password: String, username: String) {
         
@@ -173,7 +174,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
         
     }
     
-    // MARK: - Helper Functions
+    // MARCA: - funciones de ayuda
     
     func configureViewComponents() {
         view.backgroundColor = UIColor.mainBlue()

@@ -69,7 +69,7 @@ extension UIColor {
     }
     
     static func mainBlue() -> UIColor {
-        return UIColor.rgb(red: 0, green: 150, blue: 255)
+        return UIColor.rgb(red: 0, green: 169, blue: 99)
     }
     
     static func googleRed() -> UIColor {

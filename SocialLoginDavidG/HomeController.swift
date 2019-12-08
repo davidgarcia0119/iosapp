@@ -11,7 +11,7 @@ import Firebase
 
 class HomeController: UIViewController {
     
-    // MARK: - Properties
+    // MARCA: - Propriedades
     
     var welcomeLabel: UILabel = {
         let label = UILabel()
